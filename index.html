@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </head>
 <body>
-<header class="header">
+<header class="header"> 
     <div class="header__inner">
         <div class="header__logo">
             <a href="/">
@@ -78,107 +80,36 @@
         <span></span>
         <span></span>
     </button>
-    <style>
-        @media screen and (min-width: 769px) {
-            .hamburger-menu {
-                display: none;
-            }
-        }
-        
-        @media screen and (max-width: 768px) {
-            .header__nav {
-                display: none;
-                position: fixed;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                height: calc(100vh - 60px);
-                background: #fff;
-                overflow-y: auto;
-            }
-            
-            .header__nav.is-active {
-                display: block;
-            }
-            
-            .nav__list {
-                flex-direction: column;
-                padding: 20px;
-            }
-            
-            .nav__item {
-                margin: 0;
-                width: 100%;
-                border-bottom: 1px solid #eee;
-            }
-            
-            .nav__item a {
-                display: block;
-                padding: 15px 0;
-            }
-            
-            .megamenu {
-                position: static;
-                box-shadow: none;
-                padding: 0;
-            }
-            
-            .megamenu__inner {
-                padding: 0 20px;
-            }
-            
-            .header__cta {
-                margin: 20px 0;
-                text-align: center;
-            }
-            
-            .hamburger-menu {
-                display: block;
-                position: relative;
-                width: 30px;
-                height: 25px;
-                background: none;
-                border: none;
-                cursor: pointer;
-            }
-            
-            .hamburger-menu span {
-                position: absolute;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                background-color: #333;
-                transition: all 0.3s;
-            }
-            
-            .hamburger-menu span:nth-child(1) {
-                top: 0;
-            }
-            
-            .hamburger-menu span:nth-child(2) {
-                top: 50%;
-                transform: translateY(-50%);
-            }
-            
-            .hamburger-menu span:nth-child(3) {
-                bottom: 0;
-            }
-            
-            .hamburger-menu.is-active span:nth-child(1) {
-                top: 50%;
-                transform: translateY(-50%) rotate(45deg);
-            }
-            
-            .hamburger-menu.is-active span:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .hamburger-menu.is-active span:nth-child(3) {
-                bottom: 50%;
-                transform: translateY(50%) rotate(-45deg);
-            }
-        }
-    </style>
+    <section class="hero-slider">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <div style="position: relative;">
+                        <img src="/assets/images/hero1.png" class="d-block w-100 h-100" alt="ヒーロー画像4">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
+                            <h2 style="color: #fff; font-size: 2.5rem; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                                生産現場のベストパートナー
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <img src="/assets/images/hero1.png" class="d-block w-100 h-100" alt="ヒーロー画像1">
+                </div>
+                <div class="carousel-item">
+                    <img src="/assets/images/hero2.png" class="d-block w-100 h-100" alt="ヒーロー画像2">
+                </div>
+            </div>
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="スライド 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="スライド 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="スライド 3"></button>
+            </div>
+        </div>
+    </section>
+
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.querySelector('.hamburger-menu');
